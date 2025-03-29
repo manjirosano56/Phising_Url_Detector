@@ -6,7 +6,7 @@ const app = express();
 const routes = require('./routes/PhisingUrlRoutes');
 const ratelimiter = require('express-rate-limit');
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT ;
 
 
 const limiter = ratelimiter({
