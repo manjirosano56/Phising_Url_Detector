@@ -6,7 +6,7 @@ const app = express();
 const routes = require('./routes/PhisingUrlRoutes');
 const ratelimiter = require('express-rate-limit');
 
-const port = process.env.PORT ;
+const port = process.env.PORT || 8000;
 
 
 const limiter = ratelimiter({
@@ -29,6 +29,9 @@ app.use(routes)
 
 app.listen(port,()=>{
   console.log(`${port} is running`);
+  
+}).on("error", (err) =>{
+  console.error("server error",err);
   
 })
 
